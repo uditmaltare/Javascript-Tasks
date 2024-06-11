@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded shadow-md w-full max-w-sm">
+        <h1 class="text-2xl font-bold mb-6 text-center">Simple Calculator</h1>
+        <input id="id1" placeholder="Number 1" class="w-full mb-4 px-3 py-2 border border-gray-300 rounded" type="number">
+        <input id="id2" placeholder="Number 2" class="w-full mb-4 px-3 py-2 border border-gray-300 rounded" type="number">
+        <div class="text-center mb-4">
+            <h1 id="result" class="text-2xl font-semibold"></h1>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <button onclick="add()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add</button>
+            <button onclick="sub()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Subtract</button>
+            <button onclick="mul()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Multiply</button>
+            <button onclick="div()" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Divide</button>
+        </div>
+    </div>
+
+    <script>
+        function add(){
+            var no1 = document.getElementById('id1');
+            var no2 = document.getElementById('id2');
+            var result = parseInt(no1.value) + parseInt(no2.value);
+            document.getElementById('result').innerHTML = result;
+            no1.value = "";
+            no2.value = "";
+        }
+        function sub(){
+            var no1 = document.getElementById('id1');
+            var no2 = document.getElementById('id2');
+            var result = parseInt(no1.value) - parseInt(no2.value);
+            document.getElementById('result').innerHTML = result;
+            no1.value = "";
+            no2.value = "";
+        }
+        function mul(){
+            var no1 = document.getElementById('id1');
+            var no2 = document.getElementById('id2');
+            var result = parseInt(no1.value) * parseInt(no2.value);
+            document.getElementById('result').innerHTML = result;
+            no1.value = "";
+            no2.value = "";
+        }
+        function div(){
+            var no1 = document.getElementById('id1');
+            var no2 = document.getElementById('id2');
+            var result = parseInt(no1.value) / parseInt(no2.value);
+            document.getElementById('result').innerHTML = result;
+            no1.value = "";
+            no2.value = "";
+        }
+    </script>
+</body>
+</html>
